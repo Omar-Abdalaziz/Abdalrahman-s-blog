@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونة المدونه</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/256/11922/11922500.png?uid=R157958759&ga=GA1.1.1998087053.1717085349&semt=ais_hybrid"/>
+</head>
+<body class="bg-gray-100">
+    <!-- شكل التحميل -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50 hidden">
+        <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-600"></div>
+    </div>
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-600">مدونة المدونه</div>
+                <div class="hidden md:flex">
+                    <a href="#home" class="text-gray-800 hover:text-blue-600 mx-3">الرئيسية</a>
+                    <a href="#recent" class="text-gray-800 hover:text-blue-600 mx-3">أحدث المقالات</a>
+                    <a href="#about" class="text-gray-800 hover:text-blue-600 mx-3">عن المدونة</a>
+                    <a href="#contact" class="text-gray-800 hover:text-blue-600 mx-3">اتصل بنا</a>
+                </div>
+                <button type="submit" class="w-20 bg-blue-600 text-white p-2 rounded-l-lg transition duration-300">
+                    <a href="static/login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+                </button>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800 hover:text-blue-600">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white p-4">
+            <a href="#home" class="block text-gray-800 hover:text-blue-600 py-2">الرئيسية</a>
+            <a href="#recent" class="block text-gray-800 hover:text-blue-600 py-2">أحدث المقالات</a>
+            <a href="#about" class="block text-gray-800 hover:text-blue-600 py-2">عن المدونة</a>
+            <a href="#contact" class="block text-gray-800 hover:text-blue-600 py-2">اتصل بنا</a>
+            <button type="submit" class="bg-white text-blue-600 p-2 rounded-l-lg hover:bg-gray-200 transition duration-300">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-24 px-4">
+        <section id="home" class="mb-12">
+            <div class="bg-blue-600 text-white rounded-lg shadow-md p-8 text-center">
+                <h1 class="text-4xl font-bold mb-4">مرحباً بك في مدونة المدونه</h1>
+                <p class="text-xl mb-6">اكتشف أحدث المقالات والمواضيع المثيرة للاهتمام</p>
+                <form id="search-form" class="flex justify-center">
+                    <input type="text" placeholder="ابحث في المدونة..." class="p-2 rounded-r-lg w-64 focus:outline-none text-dark" id="search-input">
+                    <button type="submit" class="bg-white text-blue-600 p-2 rounded-l-lg hover:bg-gray-200 transition duration-300">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section id="categories" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">التصنيفات</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="categories-container">
+                <!-- سيتم إضافة التصنيفات هنا باستخدام JavaScript -->
+            </div>
+        </section>
+
+        <section id="featured" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">مقالات مميزة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="featured-posts-container">
+                <!-- سيتم إضافة المقالات المميزة هنا باستخدام JavaScript -->
+            </div>
+            <div id="post-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+                <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
+                    <div id="modal-content">
+                        <!-- سيتم ملء المحتوى بواسطة JavaScript -->
+                    </div>
+                    <div class="text-center mt-4">
+                        <button id="close-modal" class="px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                            إغلاق
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recent" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">أحدث المقالات</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="recent-posts-container">
+                <!-- سيتم إضافة أحدث المقالات هنا باستخدام JavaScript -->
+            </div>
+            <div id="pagination" class="mt-8"></div>
+            <div id="post-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+                <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
+                    <div id="modal-content">
+                        <!-- سيتم ملء المحتوى بواسطة JavaScript -->
+                    </div>
+                    <div class="text-center mt-4">
+                        <button id="close-modal" class="px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                            إغلاق
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">عن المدونة</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-700 mb-4">المدونة هي منصة للمحتوى الإبداعي والمعرفي. نهدف إلى تقديم مقالات عالية الجودة في مجالات متنوعة لإثراء معرفتك وإلهامك.</p>
+                <p class="text-gray-700">انضم إلينا في رحلة استكشاف المعرفة والإبداع!</p>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">اتصل بنا</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <form id="contact-form">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">الاسم</label>
+                        <input type="text" id="name" name="name" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">الرسالة</label>
+                        <textarea id="message" name="message" rows="4" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">إرسال</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">مدونة المدونه</h3>
+                    <p class="text-gray-400">نقدم لكم أفضل المحتويات والمقالات في مختلف المجالات.</p>
+                </div>
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home" class="text-gray-400 hover:text-white">الرئيسية</a></li>
+                        <li><a href="#categories" class="text-gray-400 hover:text-white">التصنيفات</a></li>
+                        <li><a href="#featured" class="text-gray-400 hover:text-white">مقالات مميزة</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">عن المدونة</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">تابعنا</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                      <span></span>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2024  المدونة . جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/c097f8119b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

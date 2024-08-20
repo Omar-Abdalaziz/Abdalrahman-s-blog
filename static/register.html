@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونة المدونه</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../style/register.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/256/11922/11922500.png?uid=R157958759&ga=GA1.1.1998087053.1717085349&semt=ais_hybrid"/>
+</head>
+<body class="bg-gray-100">
+    <!-- شكل التحميل -->
+    <div id="loader" class="fixed inset-0 bg-white flex items-center justify-center z-50 hidden">
+        <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-600"></div>
+    </div>
+    <div class="register-container">
+        <h2>إنشاء حساب جديد</h2>
+       
+        <form id="registerForm" action="profile.php"> <!--حط المسار اللي يعجبك في action -->
+            <div class="form-group">
+                <input type="text" class="form-control" id="username" placeholder="إسم المستخدم" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="كلمة المرور" required>
+            </div>
+            <button type="submit" class="btn btn-primary register-btn">إانشاء الحساب</button>
+            <div class="account">
+                <a href="../static/login.html">لدي حساب بالفعل (تسجيل دخول)</a>
+            </div>
+        </form>
+    </div>
+    
+        
+    
+
+    <script src="https://kit.fontawesome.com/c097f8119b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
